@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Velvet Bakery - Registro</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100" style="background-image: "../../static/img/backery background.jfif"">
+
+          <!-- Formulario -->
+          <section th:fragment="registro">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card border-0 shadow rounded-3 p-4 mb-5">
+                            <div class="card-body">
+                                <h2 class="text-center fw-bold mb-4" style="color: #b38b59;">Registrarse</h2>
+                                <form th:action="@{/usuario/guardar}" method="POST">
+                                    <div class="mb-3">
+                                        <label for="cedula" class="form-label fw-medium text-secondary">Cédula</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" id="cedula" name="cedula" required="true">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="nombre" class="form-label fw-medium text-secondary">Nombre</label>
+                                                <input type="text" class="form-control form-control-lg rounded-3" id="nombre" name="nombre" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="apellidos" class="form-label fw-medium text-secondary">Apellidos</label>
+                                                <input type="text" class="form-control form-control-lg rounded-3" id="apellidos" name="apellidos" required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="correo" class="form-label fw-medium text-secondary">Correo electrónico</label>
+                                        <input type="email" class="form-control form-control-lg rounded-3" id="correo" name="correo" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label fw-medium text-secondary">Número de teléfono</label>
+                                        <input type="tel" class="form-control form-control-lg rounded-3" id="telefono" name="telefono" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="direccion" class="form-label fw-medium text-secondary">Dirección</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" id="direccion" name="direccion" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label fw-medium text-secondary">Contraseña</label>
+                                        <input type="password" class="form-control form-control-lg rounded-3" id="password" name="password" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label fw-medium text-secondary">Verificar contraseña:</label>
+                                        <input type="password" class="form-control form-control-lg rounded-3" id="confirmPassword" name="confirmPassword" required="true">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg w-100 text-uppercase fw-bold py-3 mt-4 rounded-3 text-white" style="background-color: #00b379;">REGISTRARSE</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
