@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.containerU{
+    
+    height:140%;
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position:relative;
+    background: linear-gradient(180deg,    #ffffff    10%,   #c8f5e5   50% , 
+           #ffffff     100% );
+    
+}
+
+
+.contentU h1{
+    
+    font-size: 60px;
+    font-weight: 100;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    color:#B39B96;
+    
+}
+
+.contentU p{
+    
+    font-size:20px;
+    color: #65098C;
+    
+}
+
+.contentU{
+    
+    margin-top: 5%;
+    margin-left: 7%;
+    
+}
+
+.contentU div{
+    
+   
+    height: 190px;
+    width: 100%;
+    
+}
+
+
+.Loc1U{
+    
+    position: relative;
+    top: 120px;
+    left: -400px;
+    text-align: center;
+    
+    
+}
+
+.loc1U h2{
+    font-size: 40px;
+  
+    color:black;
+    text-align: center;
+}
+
+.Local1U{
+    position: relative;
+    width: 600px;
+    top: -420px;
+    left: 800px;
+    border-radius: 5%;
+}
+
+.Loc2U{
+    position: relative;
+    top: 350px;
+    left: -400px;
+    text-align: center;
+}
+
+.loc2U h2{
+    font-size: 40px;
+  
+    color:black;
+    text-align: center;
+}
+
+.Local2U{
+    position: relative;
+    width: 600px;
+    top: 30px;
+    left: 200px;
+    border-radius: 5%;
+}
+
+
+.contentU h1{
+    
+    font-size: 60px;
+    font-weight: 100;
+
+    color:Black;
+    text-align: center;
+    margin-left: -10%;
+    margin-bottom: 25px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+.contentU p{
+    
+    font-size:30px;
+    color: black;
+    text-align: justify;
+    margin-top: 5%;
+    margin-right: 25%;
+    margin-left: 15%;
+    text-align: center;
+    
+}
+
+.contentU{
+    
+    margin-top: 5%;
+    margin-left: 7%;
+    
+}
+
