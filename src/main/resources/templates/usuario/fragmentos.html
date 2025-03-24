@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Velvet Bakery - Registro</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100" style="background-image: "../../static/img/backery background.jfif"">
+
+        <!-- Login -->
+          <section th:fragment="login">
+            <div class="mycontainer" style="margin-top: 80px;">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow rounded-3 p-4 mb-5">
+                            <div class="card-body">
+                                <h2 class="text-center fw-bold mb-4" style="color: MediumSeaGreen;">[[#{iniciar.sesion.login}]]</h2>
+                                <form th:action="@{/login}" method="POST">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label fw-medium text-secondary">[[#{login.username}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" id="username" name="username" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label fw-medium text-secondary">[[#{login.password}]]</label>
+                                        <input type="password" class="form-control form-control-lg rounded-3" id="password" name="password" required="true">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg w-100 text-uppercase fw-bold py-3 mt-4 rounded-3 text-white" style="background-color: MediumSeaGreen;">[[#{iniciar.sesion.login.boton}]]</button>
+
+                                    <div class="text-center mt-3">
+                                        <a class="text-decoration-none text-dark mx-4 fw-normal" th:href="@{/usuario/registro}" id="Registro">[[#{boton.registrar.usuario}]]</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario -->
+        <section th:fragment="registro">
+            <div class="mycontainer" style="margin-top: 80px;">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card border-0 shadow rounded-3 p-4 mb-5">
+                            <div class="card-body">
+                                <h2 class="text-center fw-bold mb-4" style="color: MediumSeaGreen;">[[#{plantilla.registro}]]</h2>
+                                <form th:action="@{/usuario/guardar}" method="POST">
+                                    <div class="mb-3">
+                                        <label for="cedula" class="form-label fw-medium text-secondary">[[#{usuario.cedula}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" id="cedula" name="cedula" required="true">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="nombre" class="form-label fw-medium text-secondary">[[#{usuario.nombre}]]</label>
+                                                <input type="text" class="form-control form-control-lg rounded-3" id="nombre" name="nombre" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="apellidos" class="form-label fw-medium text-secondary">[[#{usuario.apellidos}]]</label>
+                                                <input type="text" class="form-control form-control-lg rounded-3" id="apellidos" name="apellidos" required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="correo" class="form-label fw-medium text-secondary">[[#{usuario.correo}]]</label>
+                                        <input type="email" class="form-control form-control-lg rounded-3" id="correo" name="correo" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label fw-medium text-secondary">[[#{usuario.telefono}]]</label>
+                                        <input type="tel" class="form-control form-control-lg rounded-3" id="telefono" name="telefono" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="direccion" class="form-label fw-medium text-secondary">[[#{usuario.direccion}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" id="direccion" name="direccion" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label fw-medium text-secondary">[[#{usuario.password}]]</label>
+                                        <input type="password" class="form-control form-control-lg rounded-3" id="password" name="password" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label fw-medium text-secondary">[[#{usuario.password.verificar}]]</label>
+                                        <input type="password" class="form-control form-control-lg rounded-3" id="confirmPassword" name="confirmPassword" required="true">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg w-100 text-uppercase fw-bold py-3 mt-4 rounded-3 text-white" style="background-color: MediumSeaGreen;">[[#{boton.registro.registrarse}]]</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!---index cuerpo--->
+        <section th:fragment="index">
+            <div class="mycontainer" > 
+                <div class="content">
+                    <h1 class="h1"><b id="h1">[[#{index.1}]]</b> <br> <b id="h12">[[#{index.2}]]</b></h1>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="column-66">
+                                <h1 class="xlarge-font"><b id="cookies">[[#{index.3}]]</b></h1>
+                                <h1 class="large-font" style="color:MediumSeaGreen;"><b id="loveem">[[#{index.4}]]</b></h1>
+                                <p><span style="font-size:36px" id="eatone">[[#{index.5}]]</span> <span id="thankuslater">[[#{index.6}]]</span></p>
+                                <a href="/cookie"><button class="button" style="background-color:MediumSeaGreen">[[#{index.7.boton.ordenar}]]</button></a>
+                            </div>
+                            <div class="column-33">
+                                <img src="img/Vegan_Chocolate_Mini_Cakes_With_Coconut_Milk_Ganache1.jpg" alt="" class="pictures"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container" style="background-color:transparent">
+                        <div class="row">
+                            <div class="column-33">
+                                <img src="img/cakeshop.png" alt="" class="mypictures"/>
+
+                            </div>
+                            <div class="mycolumn-66">
+                                <h1 class="xlarge-font"><b>[[#{index.8}]]</b></h1>
+                                <h1 class="large-font" style="color:MediumSeaGreen;"><b>[[#{index.9}]]</b></h1>
+                                <p>[[#{index.10}]]</p>
+                                <a href="/snack"><button class="button" style="background-color:MediumSeaGreen">[[#{index.11}]]</button></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="column-66">
+                                <h1 class="xlarge-font"><b>[[#{index.12}]]</b></h1>
+                                <h1 class="large-font" style="color:MediumSeaGreen;"><b>[[#{index.13}]]</b></h1>
+                                <p><span style="font-size:36px">[[#{index.14}]]</span>[[#{index.15}]]</p>
+                                <a href="/cookie"><button class="button">[[#{index.16}]]</button></a>
+                            </div>
+                            <div class="column-33">
+                                <img src="img/strawberry cake.jpg" alt="" class="pictures">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container" style="background-color:transparent">
+                        <div class="row">
+                            <div class="column-33">
+                                <img src="img/stuffed donut.jpg" alt="" class="mypictures"/>
+                            </div>
+                            <div class="mycolumn-66">
+                                <h1 class="xlarge-font"><b>[[#{index.17}]]</b></h1>
+                                <h1 class="large-font" style="color:MediumSeaGreen;"><b>[[#{index.18}]]</b></h1>
+                                <p>[[#{index.19}]]</p>
+                                <a href="/donut"><button class="button" style="background-color:MediumSeaGreen">[[#{index.20}]]</button></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-container">
+                        <div class="flex-child magenta">
+                            <div class="fondodiv"> 
+                                <h1 class="myxlarge-font"><b>[[#{index.21}]] <br> [[#{index.22}]]</b></h1>
+                                <p class="textodiv">[[#{index.23}]]</p>
+                            </div>
+                            <a href="order.html"><button class="mybutton" style="background-color:MediumSeaGreen">[[#{index.24}]]</button></a>
+                            <img src="img/backery background.jfif" class=""/>
+
+                        </div>
+                        <div class="flex-child green">
+                            <div class="fondodiv2"> 
+                                <h1 class="myxlarge-font"><b>[[#{index.25}]]</b></h1>
+                            </div>
+                            <img src="img/backery background.jfif" class=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ </body>
+</html>
