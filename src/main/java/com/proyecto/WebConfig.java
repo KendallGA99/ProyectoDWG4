@@ -70,16 +70,16 @@ public class WebConfig implements WebMvcConfigurer {
                 .requestMatchers("/", "/index", "/errores/**", "/menu/**",
                         "/carrito/**", "/aboutus/**", "/usuario/**", "/js/**",
                         "/webjars/**", "/css/**", "/img/**", "/registro/**",
-                        "/registro/activacion/**", "/registro/activa", "/registro/activar")
+                        "/registro/activacion/**", "/registro/activa", "/registro/activar", "/ubicacion/ubicacion/**", "/order/**")
                 .permitAll()
                 .requestMatchers(
                         "/menu/menu", "/registro/registro", "/registro/activacion/**",
                         "/registro/recordar/**", "/registro/salida/**", "/usuario/guardar",
                         "/usuario/modificar/**", "/usuario/eliminar/**",
-                        "/order/**", "/carrito/**", "registro/**", "/login/**"
+                        "/order/**", "/carrito/**", "registro/**", "/login/**", "/carrito/**"
                 ).hasRole("ADMIN")
                 .requestMatchers("/order", "/aboutus/about_us",
-                        "/menu/menu", "/ubicacion/ubicacion", "/registro/registro", "/registro/activacion",
+                        "/menu/menu", "/ubicacion/ubicacion/**", "/registro/registro", "/registro/activacion",
                         "/registro/recordar/**", "/registro/salida/**", "/order/**", "/carrito/**")
                 .hasRole("USER")
                 )
