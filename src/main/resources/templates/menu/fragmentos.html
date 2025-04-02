@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Velvet Bakery - Registro</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100" style="background-image: "../img/backery background.jfif"">
+        <!---Menu us body--->
+        <section th:fragment="Menu">
+            <div class="mycontainerM" > 
+                <div class="content">
+                    <div class="row">
+                        <div class="column">
+                            <div class="card">
+                                <a href="/cakes.html"><img src="../img/zanahoria_.jpeg" alt="Zanahoria" style="width:100%" class="imgM"/></a> 
+                                <div class="container">
+                                    <h2>[[#{producto.queque}]]</h2>
+                                    <p><b>[[#{precios.queque}]]</b><i> $8 - $10</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <a href="/donut"><img src="../img/Frosty_Donuts_2.jpg" alt="Frosty Donut" style="width:100%" class="imgM"/></a>
+                                <div class="container">
+                                    <h2>[[#{producto.donas}]]</h2>
+                                    <p><b>[[#{precios.donas}]]</b><i> $2 - $4</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <a href="/cookie"><img src="../img/Red_Velvet_Cookie.jpg" alt="Red Velvet Cookie" style="width:100%" class="imgM"/></a> 
+                                <div class="container">
+                                    <h2>[[#{producto.galletas}]]</h2>
+                                    <p><b>[[#{precios.galletas}]]</b><i> $2 - $3</i></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                   <div class="row">
+                   <div class="column">
+                            <div class="card">
+                                <a href="/snack"><img src="../img/croissants_1.jpg" alt="Cannoncini" style="width:100%" class="imgM"/></a> 
+                                <div class="container">
+                                    <h2>[[#{producto.croissant}]]</h2>
+                                    <p><b>[[#{precios.croissant}]]</b><i> $2 - $3</i></p>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

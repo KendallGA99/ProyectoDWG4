@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Velvet Bakery</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100" style="background-image: "../../static/img/backery background.jfif"">
+
+          <!-- Formulario -->
+          <section th:fragment="registro">
+            <div class="mycontainer" style="margin-top: 80px;">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form method="POST" th:action="@{/registro/registro}" th:object="${usuario}">
+                            <div class="card border-0 shadow rounded-3 p-4 mb-5">
+                                <div class="card-body">
+                                    <h2 class="text-center fw-bold mb-4" style="color: MediumSeaGreen;">[[#{plantilla.registro}]]</h2>
+                                    <div class="mb-3">
+                                        <label for="cedula" class="form-label fw-medium text-secondary">[[#{usuario.cedula}]]</label>
+                                        <input type="number" class="form-control form-control-lg rounded-3" name="cedula" th:field="*{cedula}" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label fw-medium text-secondary">[[#{usuario.username}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" name="username" th:field="*{username}" required="true">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="nombre" class="form-label fw-medium text-secondary">[[#{usuario.nombre}]]</label>
+                                                <input type="text" class="form-control form-control-lg rounded-3" name="nombre" th:field="*{nombre}" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="apellidos" class="form-label fw-medium text-secondary">[[#{usuario.apellidos}]]</label>
+                                                <input type="text" class="form-control form-control-lg rounded-3" name="apellidos" th:field="*{apellidos}" required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="correo" class="form-label fw-medium text-secondary">[[#{usuario.correo}]]</label>
+                                        <input type="email" class="form-control form-control-lg rounded-3" name="correo" th:field="*{correo}" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label fw-medium text-secondary">[[#{usuario.telefono}]]</label>
+                                        <input type="tel" class="form-control form-control-lg rounded-3" name="telefono" th:field="*{telefono}" required="true">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="direccion" class="form-label fw-medium text-secondary">[[#{usuario.direccion}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" name="direccion" th:field="*{direccion}" required="true">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg w-100 text-uppercase fw-bold py-3 mt-4 rounded-3 text-white" style="background-color: MediumSeaGreen;">[[#{boton.registro.registrarse}]]</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2 Fragmento que se utiliza activar un usuario -->
+        <section th:fragment="activarUsuario">
+            <div class="mycontainer" style="margin-top: 80px;">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form method="POST" th:action="@{/registro/activa}" th:object="${usuario}" enctype="multipart/form-data">
+                            <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
+                            <div class="card border-0 shadow rounded-3 p-4 mb-5">
+                                <div class="card-body">
+                                    <h2 class="text-center fw-bold mb-4" style="color: MediumSeaGreen;">[[#{registro.activar}]]</h2>
+
+                                    <div class="mb-3">
+                                        <label for="cedula" class="form-label fw-medium text-secondary">[[#{usuario.cedula}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" name="cedula" th:field="*{cedula}" required="true"/>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label fw-medium text-secondary">[[#{usuario.username}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" name="username" th:field="*{username}" required="true"/>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="nombre" class="form-label fw-medium text-secondary">[[#{usuario.nombre}]]</label>
+                                                <input type="text" class="form-control form-control-lg rounded-3" name="nombre" th:field="*{nombre}" required="true"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="apellidos" class="form-label fw-medium text-secondary">[[#{usuario.apellidos}]]</label>
+                                                <input type="text" class="form-control form-control-lg rounded-3" name="apellidos" th:field="*{apellidos}" required="true"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label fw-medium text-secondary">[[#{usuario.correo}]]</label>
+                                        <input type="email" class="form-control form-control-lg rounded-3" name="correo" th:field="*{correo}" required="true"/>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label fw-medium text-secondary">[[#{usuario.telefono}]]</label>
+                                        <input type="tel" class="form-control form-control-lg rounded-3" name="telefono" th:field="*{telefono}"/>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label fw-medium text-secondary">[[#{usuario.password}]]</label>
+                                        <input type="password" class="form-control form-control-lg rounded-3" name="password" th:field="*{password}"/>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg w-100 text-uppercase fw-bold py-3 mt-4 rounded-3 text-white" style="background-color: MediumSeaGreen;">
+                                        [[#{usuario.activacion}]]
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 Fragmento que se utiliza recordar un usuario -->
+        <section th:fragment="recordarUsuario">
+            <div class="mycontainer" style="margin-top: 80px;">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <!-- Botón Regresar -->
+                        <div class="mb-4">
+                            <a th:href="@{/login}" class="btn rounded-3 px-4 py-3 text-white fw-bold d-flex align-items-center gap-2" style="background-color:MediumSeaGreen; width: fit-content;">
+                                <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
+                            </a>
+                        </div>
+
+                        <form method="POST" th:action="@{/registro/recordar}" th:object="${usuario}" class="was-validated">
+                            <div class="card border-0 shadow rounded-3 p-4 mb-5">
+                                <div class="card-body">
+                                    <h2 class="text-center fw-bold mb-4" style="color: MediumSeaGreen;">[[#{registro.recordar.us}]]</h2>
+
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label fw-medium text-secondary">[[#{usuario.username}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" name="username" th:field="*{username}"/>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="correo" class="form-label fw-medium text-secondary">[[#{usuario.correo}]]</label>
+                                        <input type="text" class="form-control form-control-lg rounded-3" name="correo" th:field="*{correo}"/>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg w-100 text-uppercase fw-bold py-3 mt-4 rounded-3 text-white" style="background-color: MediumSeaGreen;">
+                                        <i class="fas fa-address-card"></i> [[#{registro.recordar.us}]]
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

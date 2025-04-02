@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.topnav a {
+    height: 15vh;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 21px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    margin-top: 80px;
+    padding: 22px;
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.column-66 {
+    margin-left: 100px;
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+
+}
+
+.mycolumn-66 {
+    margin-left: 375px;
+    margin-top: -350px;
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+
+}
+
+.column-33 {
+    float: left;
+    width: 33.33333%;
+}
+
+.large-font {
+    font-size: 48px;
+}
+
+.xlarge-font {
+    font-size: 64px
+}
+
+.fondodiv{
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 15px;
+    position:absolute;
+    text-align: center;
+}
+
+.fondodiv2{
+    margin-top: 150px;
+    margin-left: 150px;
+    font-size: 15px;
+    position:absolute;
+    text-align: center;
+
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #04AA6D;
+}
+
+.mybutton {
+    margin-top: 200px;
+    margin-left: 260px;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #04AA6D;
+    position:absolute;
+    border-radius: 10%;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .column-66,
+    .column-33 {
+        width: 100%;
+        text-align: center;
+    }
+    img {
+        margin: auto;
+    }
+}
+
+.flex-container {
+    display: flex;
+    margin-top: 100px;
+}
+
+.flex-child {
+    flex: 1;
+    height: 600px;
+
+}
+
+.flex-child:first-child {
+    margin-right: 20px;
+}
+
+.imagendiv{
+    border-radius: 5px;
+
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 30px;
+    margin-top: 3px;
+}
+
+.topnav a:hover {
+    text-decoration:underline;
+    color: black;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.mycontainer{
+
+    height:300%;
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position:relative;
+    background: linear-gradient(180deg,    #ffffff    10%,   #c8f5e5   50% ,
+        #ffffff     100% );
+
+}
+.tophr{
+
+    margin-top: 40px;
+
+}
+
+.mylogo{
+
+    width: 400px;
+    cursor: pointer;
+    margin-left: -50px;
+    margin-top: 25px;
+}
+
+.pictures{
+    width: 300px;
+    margin-top: -300px;
+    margin-left: 1150px;
+    position:absolute;
+    border-radius: 10px;
+
+}
+
+.p{
+
+}
+
+.mypictures{
+    margin-top: 50px;
+    width: 300px;
+    position:sticky;
+    border-radius: 10px;
+}
+
+.h1{
+
+    font-size: 75px;
+    font-weight: 100;
+    color:#B39B96;
+    text-align: center;
+    margin-left: -10%;
+    margin-bottom: 25px;
+    margin-top: -50px;
+}
+
+.content{
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+footer a {
+    color: blue;
+}
+
+footer a:hover {
+    color: lightblue;
+}
+
+footer {
+    margin-top: 150px;
+    text-align: center;
+    display: block;
+    padding: 3px;
+    background-color:   #F0F0F0;
+    color: black;
+    border-top: solid #ffffff 2px;
+
+}
+
+.footerL{
+    display: inline-block;
+    text-align: left;
+    width: 48%;
+
+}
+
+.footerR{
+    display: inline-block;
+    text-align: right;
+    width: 48%;
+
+}
+
+.rightP{
+    float:right;
+    margin: 1%;
+}
+
+.leftP{
+    float:left;
+    margin: 1%;
+}
+
+footer hr{
+
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-top: dotted white 2px;
+    box-sizing: border-box;
+    margin-left: 15%;
+
+}
+
