@@ -16,21 +16,22 @@ use proyecto;
 CREATE TABLE usuario (
   id_usuario INT NOT NULL AUTO_INCREMENT,
   cedula INT NOT NULL,
+  username varchar(20) NOT NULL,
+  password varchar(512) NOT NULL,
   nombre VARCHAR(20) NOT NULL,
   apellidos VARCHAR(30) NOT NULL,
-  correo VARCHAR(75) NOT NULL,
-  telefono VARCHAR(15) NOT NULL,
-  direccion VARCHAR(255) NOT NULL,
-  password varchar(512) NOT NULL,
+  direccion varchar(100),
+  correo VARCHAR(75) NULL,
+  telefono VARCHAR(15) NULL,
+  activo boolean,
   PRIMARY KEY (`id_usuario`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
 /*Se insertan valores en la tabla de Usuarios*/
-INSERT INTO usuario (id_usuario, cedula, nombre, apellidos, correo, telefono, direccion, password) VALUES 
-(1, 305570062, 'Evelyn', 'Masis', 'evelynmasisg05@gmail.com', '85799881', 'Cartago, San Rafael', 'r8yZPX4YxvyK5DB5GaHGFfLmMFUITLQr/d/8e7Vg4ZQ'),
-(2, 108560789, 'Kendall', 'Gamboa', 'kendallgamboa70@gmail.com', '65478921', 'San José, San Pedro', '8WKOJw7dJvgabgpM2UduhqQV8HAMCISRa11uEO4kdGinNYiwGFsHAAZdk/28BF225nNqlgWeBARwoI7tarFIjImCY/Fd6+it8NPWEK7VVJE'),
-(4, 107560084, 'Alexander', 'Montero', 'alexandermontero73@gmail.com', '96547832', 'Heredia, Flores', 'FU06aVkLpmjVlmPC7TrFdvGs7lXIAl4kpFa/D7oWptLGs+pRQgYorQeSxEh6cDMXIJrIuZ2iUpwekdQtc1Wlmx8ybvR6oFTtC02FuPSzn00');
+INSERT INTO usuario (cedula, username, nombre, apellidos, direccion, correo, telefono, password, activo) VALUES 
+(108560789, 'kendall', 'Kendall', 'Gamboa', 'San Jose', 'kendallgamboa4@gmail.com', '65478921', 'r8yZPX4YxvyK5DB5GaHGFfLmMFUITLQr/d/8e7Vg4ZQ',1),
+(107560084, 'alexander', 'Alexander', 'Montero', 'San Pedro', 'alexandermontero73@gmail.com', '96547832', 'r8yZPX4YxvyK5DB5GaHGFfLmMFUITLQr/d/8e7Vg4ZQ',1);
 
 /*Se crea la tabla de Usuarios*/
 create table rol (
@@ -45,10 +46,9 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 /*Se insertan valores en la tabla de Usuarios*/
 insert into rol (id_rol, nombre, id_usuario) values
- (1,'ROLE_ADMIN', 1), (2,'ROLE_USER',1),
- (3,'ROLE_ADMIN', 2), (4,'ROLE_USER',2),
- (5,'ROLE_ADMIN', 4), (6,'ROLE_USER',4),
- (7,'ROLE_USER',5);
+ (1,'ROLE_ADMIN', 2), (2,'ROLE_USER',2),
+ (7,'ROLE_ADMIN', 6), (8,'ROLE_USER',6),
+ (9,'ROLE_ADMIN', 7), (10,'ROLE_USER',7);
  
 /*Se crea la tabla de Categorias*/
 create table categoria (
@@ -75,5 +75,9 @@ create table producto (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
  
- use proyecto;
- select * FROM usuario;
+use proyecto;
+select * FROM usuario;
+select * FROM rol;
+ 
+drop table rol;
+drop table usuario;
