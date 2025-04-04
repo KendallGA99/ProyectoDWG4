@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.containerC{
+    
+    height:140%;
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position:relative;
+    background: linear-gradient(180deg,    #ffffff    10%,   #c8f5e5   50% , 
+           #ffffff     100% );
+    
+}
+
+.card-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #5a2c1e; /* Color marrón pastel para panadería */
+}
+
+.card img {
+    object-fit: cover;
+    height: 250px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    opacity: 1;
+}
+
+.titulo-cakes {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    color: #a0522d; /* Marrón suave */
+    text-shadow: 1px 1px 2px #e8d3c1;
+}

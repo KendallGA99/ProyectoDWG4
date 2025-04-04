@@ -63,7 +63,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addViewController("/registro/registro").setViewName("/registro/registro");
     }
 
-    @Bean
+    /*@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((request) -> request
@@ -87,7 +87,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .loginPage("/login").permitAll())
                 .logout((logout) -> logout.permitAll());
         return http.build();
-    }
+    }*/
 
     @Autowired
     private UserDetailsService userDetailsService;
